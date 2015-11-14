@@ -11,7 +11,7 @@
     this.DIM_Y = DIM_Y;
     this.asteroids = [];
     this.addAsteroids();
-    this.ship = new Asteroids.Ship(this.randomPosition());
+    this.ship = new Asteroids.Ship(this.randomPosition(), this);
   };
 
   Asteroids.Game.prototype.addAsteroids = function(){
@@ -22,20 +22,20 @@
                                       (DIM_Y * Math.random())],
                                 game: this
                                       }));
-                                    };
+                                }
   };
 
   Asteroids.Game.prototype.draw = function (ctx) {
     ctx.clearRect(0,0,DIM_X, DIM_Y);
-
-    this.allObjects.forEach(function(obj){
+    // debugger;
+    this.allObjects().forEach(function(obj){
       obj.draw(ctx);
     });
   };
 
   Asteroids.Game.prototype.moveObjects = function(){
-
-    this.allObjects.forEach(function(obj){
+    // debugger;
+    this.allObjects().forEach(function(obj){
       obj.move();
     });
 
@@ -62,12 +62,13 @@
   };
 
   Asteroids.Game.prototype.checkCollisions = function(){
-    for(var i = 0; i < this.allObjects.length - 1; i++){
-      for (var j = (i + 1); j < this.allObjects.length; j++){
-        if (this.allObjects[i].isCollidedWith(this.allObjects[j])) {
+
+    for(var i = 0; i < this.allObjects().length - 1; i++){
+      for (var j = (i + 1); j < this.allObjects().length; j++){
+        if (this.allObjects()[i].isCollidedWith(this.allObjects()[j])) {
           // alert("COLLISION");
-          this.remove(i);
-          this.remove(j-1);
+          this.remove(this.allObjects()[i]);
+          this.remove(this.allObjects()[j - 1]);
         }
       }
     }
@@ -79,23 +80,27 @@
     pos[1] = DIM_Y * Math.random();
 
     return pos;
-  }
+  };
 
   Asteroids.Game.prototype.step = function(){
     this.moveObjects();
     this.checkCollisions();
   };
 
-  Asteroids.Game.prototype.remove = function(idx){
-    this.allObjects.splice(idx, 1);
+  Asteroids.Game.prototype.remove = function(mvgObj){
+    // debugger;
+    var idx = this.asteroids.indexOf(mvgObj);
+    if (idx >= 0){
+      this.asteroids.splice(idx, 1);
+    }
   };
 
   Asteroids.Game.prototype.allObjects = function(){
     var allObs = this.asteroids.slice();
-
     allObs.push(this.ship);
+    // debugger;
 
     return allObs;
 
-  }
+  };
 })();

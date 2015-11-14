@@ -1,7 +1,7 @@
 (function () {
-
+  
   var Asteroids = window.Asteroids = window.Asteroids || {};
-  var Util = Asteroids.Util = {}
+  var Util = Asteroids.Util = {};
 
   Util.inherits = function (ChildClass, ParentClass) {
     var Surrogate = function() {};

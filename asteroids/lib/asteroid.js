@@ -1,6 +1,5 @@
-"use strict";
-
 (function(){
+"use strict";
 
   var Asteroids = window.Asteroids = window.Asteroids || {};
 
@@ -9,14 +8,12 @@
 
   Asteroids.Asteroid = function (obj) {
 
-  this.pos = obj["pos"];
+  this.pos = obj.pos;
   this.color = COLOR;
   this.radius = RADIUS;
   this.vel = Asteroids.Util.randomVec(1);
-  this.game = obj["game"];
+  this.game = obj.game;
 };
-
-// Asteroids.Asteroid.inherits(Asteroids.MovingObject);
 
 Asteroids.Util.inherits(Asteroids.Asteroid, Asteroids.MovingObject);
 
