@@ -66,7 +66,7 @@
     for(var i = 0; i < this.allObjects().length - 1; i++){
       for (var j = (i + 1); j < this.allObjects().length; j++){
         if (this.allObjects()[i].isCollidedWith(this.allObjects()[j])) {
-          // alert("COLLISION");
+          // if (instanceof this.allObjects()[i] === "Ship" )
           this.remove(this.allObjects()[i]);
           this.remove(this.allObjects()[j - 1]);
         }
@@ -88,7 +88,6 @@
   };
 
   Asteroids.Game.prototype.remove = function(mvgObj){
-    // debugger;
     var idx = this.asteroids.indexOf(mvgObj);
     if (idx >= 0){
       this.asteroids.splice(idx, 1);
@@ -98,8 +97,6 @@
   Asteroids.Game.prototype.allObjects = function(){
     var allObs = this.asteroids.slice();
     allObs.push(this.ship);
-    // debugger;
-
     return allObs;
 
   };

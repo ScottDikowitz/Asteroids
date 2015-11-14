@@ -11,7 +11,6 @@ Asteroids.GameView.prototype.start = function(){
   window.setInterval((function (){
     game.step();
     game.draw(this.ctx);
-    // game.wrap();
   }.bind(this)),  5);
 };
 
