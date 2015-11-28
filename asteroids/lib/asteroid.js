@@ -17,4 +17,21 @@
 
 Asteroids.Util.inherits(Asteroids.Asteroid, Asteroids.MovingObject);
 
+Asteroids.Asteroid.prototype.collideWith = function(otherObject){
+  if (otherObject instanceof Ship){
+    distance = Math.sqrt((Math.pow((this.pos[0] - otherObject.pos[0]), 2)) + (Math.pow((this.pos[1] - otherObject.pos[1]), 2)));
+    if (distance < (this.radius + otherObject.radius)){
+      // return true;
+      otherObject.relocate();
+      return true;
+    }
+    else
+      return false;
+    }
+    else {
+      return false;
+    }
+};
+
+
 })();
