@@ -20,6 +20,11 @@
     this.vel = [0,0];
   };
 
+  Asteroids.Ship.prototype.fireBullet = function(){
+    this.game.bullets.push(new Asteroids.Bullet(this.vel, this.pos, this.game, this.radius));
+
+  };
+
   Asteroids.Ship.prototype.power = function(impulse){
 
     if (this.vel[1] < 0 && impulse[1] > 0){

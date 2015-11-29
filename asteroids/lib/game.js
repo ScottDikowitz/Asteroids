@@ -4,14 +4,16 @@
 
   var DIM_X = 800;
   var DIM_Y = 600;
-  var NUM_ASTEROIDS = 3;
+  var NUM_ASTEROIDS = 10;
 
   Asteroids.Game = function(){
     this.DIM_X = DIM_X;
     this.DIM_Y = DIM_Y;
     this.asteroids = [];
+    this.bullets = [];
     this.addAsteroids();
     this.ship = new Asteroids.Ship(this.randomPosition(), this);
+    // setTimeout(function(){ debugger; }.bind(this), 5000);
   };
 
   Asteroids.Game.prototype.addAsteroids = function(){
@@ -68,7 +70,11 @@
         if (this.allObjects()[i].isCollidedWith(this.allObjects()[j])) {
           // if (instanceof this.allObjects()[i] === "Ship" )
           // debugger;
+
           this.allObjects()[i].collideWith(this.allObjects()[j]);
+          if (this.allObjects()[j]){
+          this.allObjects()[j].collideWith(this.allObjects()[i]);
+        }
           // this.allObjects()[i].collideWith(this.allObjects()[j]);
         }
       }
@@ -89,15 +95,23 @@
   };
 
   Asteroids.Game.prototype.remove = function(mvgObj){
-    var idx = this.asteroids.indexOf(mvgObj);
-    if (idx >= 0){
-      this.asteroids.splice(idx, 1);
+    var idx;
+
+    if (mvgObj instanceof Asteroids.Asteroid){
+       idx = this.asteroids.indexOf(mvgObj);
+       this.asteroids.splice(idx, 1);
+    }
+    else if (mvgObj instanceof Asteroids.Bullet){
+      idx = this.bullets.indexOf(mvgObj);
+      this.bullets.splice(idx, 1);
     }
   };
 
   Asteroids.Game.prototype.allObjects = function(){
     var allObs = this.asteroids.slice();
     allObs.push(this.ship);
+    // debugger;
+    allObs = allObs.concat(this.bullets);
     return allObs;
 
   };

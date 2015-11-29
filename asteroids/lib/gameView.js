@@ -20,6 +20,7 @@ Asteroids.GameView.prototype.bindKeyHandlers = function(){
   key('down', function(){ this.game.ship.power([0,0.4]); return false; }.bind(this));
   key('left', function(){ this.game.ship.power([-0.4, 0]); return false; }.bind(this));
   key('right', function(){ this.game.ship.power([0.4,0]); return false; }.bind(this));
+  key('f', function(){ this.game.ship.fireBullet(); return false; }.bind(this));
 
 };
 
