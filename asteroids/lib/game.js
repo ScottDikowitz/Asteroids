@@ -67,8 +67,9 @@
       for (var j = (i + 1); j < this.allObjects().length; j++){
         if (this.allObjects()[i].isCollidedWith(this.allObjects()[j])) {
           // if (instanceof this.allObjects()[i] === "Ship" )
-          this.remove(this.allObjects()[i]);
-          this.remove(this.allObjects()[j - 1]);
+          // debugger;
+          this.allObjects()[i].collideWith(this.allObjects()[j]);
+          // this.allObjects()[i].collideWith(this.allObjects()[j]);
         }
       }
     }
