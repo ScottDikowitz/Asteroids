@@ -2,9 +2,9 @@
 
   var Asteroids = window.Asteroids = window.Asteroids || {};
 
-  var DIM_X = 1200;
-  var DIM_Y = 800;
-  var NUM_ASTEROIDS = 50;
+  var DIM_X = 800;
+  var DIM_Y = 600;
+  var NUM_ASTEROIDS = 3;
 
   Asteroids.Game = function(){
     this.DIM_X = DIM_X;
@@ -44,17 +44,17 @@
   Asteroids.Game.prototype.wrap = function(pos){
     var new_pos = pos;
 
-    if (pos[0] > 1225) {
+    if (pos[0] > DIM_X + 25) {
       new_pos[0] = -25;
     }
     else if (pos[0] < -25) {
-      new_pos[0] = 1225;
+      new_pos[0] = DIM_X + 25;
     }
 
     if (pos[1] < -25) {
-      new_pos[1] = 825;
+      new_pos[1] = DIM_Y;
     }
-    else if (pos[1] > 825) {
+    else if (pos[1] > DIM_Y) {
       new_pos[1] = -25;
     }
 

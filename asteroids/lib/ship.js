@@ -19,5 +19,20 @@
     this.vel = [0,0];
   };
 
+  Asteroids.Ship.prototype.power = function(impulse){
+    this.vel[0] += impulse[0];
+    this.vel[1] += impulse[1];
+
+    if (this.vel[0] > 2)
+    this.vel[0] = 2;
+    else if (this.vel[0] < -2)
+    this.vel[0] = -2;
+
+    if (this.vel[1] > 2)
+    this.vel[1] = 2;
+    else if (this.vel[1] < -2)
+    this.vel[1] = -2;
+  };
+
 
 })();
