@@ -4,6 +4,7 @@
   var Asteroids = window.Asteroids = window.Asteroids || {};
   var RADIUS = 8;
   var COLOR = "black";
+  var MAX = 1.5;
   Asteroids.Ship = function(pos, game){
     this.vel = [0,0];
     this.pos = pos;
@@ -20,18 +21,33 @@
   };
 
   Asteroids.Ship.prototype.power = function(impulse){
+
+    if (this.vel[1] < 0 && impulse[1] > 0){
+      impulse[1] = 1.1;
+    }
+    else if (this.vel[1] > 0 && impulse[1] < 0){
+      impulse[1] = -1.1;
+    }
+
+    if (this.vel[0] < 0 && impulse[0] > 0){
+      impulse[0] = 1.1;
+    }
+    else if (this.vel[0] > 0 && impulse[0] < 0){
+      impulse[0] = -1.1;
+    }
+
     this.vel[0] += impulse[0];
     this.vel[1] += impulse[1];
 
-    if (this.vel[0] > 2)
-    this.vel[0] = 2;
-    else if (this.vel[0] < -2)
-    this.vel[0] = -2;
+    if (this.vel[0] > MAX)
+    this.vel[0] = MAX;
+    else if (this.vel[0] < -MAX)
+    this.vel[0] = -MAX;
 
-    if (this.vel[1] > 2)
-    this.vel[1] = 2;
-    else if (this.vel[1] < -2)
-    this.vel[1] = -2;
+    if (this.vel[1] > MAX)
+    this.vel[1] = MAX;
+    else if (this.vel[1] < -MAX)
+    this.vel[1] = -MAX;
   };
 
 
