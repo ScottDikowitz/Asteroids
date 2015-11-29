@@ -15,7 +15,7 @@
   Asteroids.Util.inherits(Asteroids.Ship, Asteroids.MovingObject);
 
   Asteroids.Ship.prototype.relocate = function(){
-    this.post = Asteroids.Game.randomPosition();
+    this.pos = this.game.randomPosition();
     this.vel = [0,0];
   };
 
