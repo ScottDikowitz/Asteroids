@@ -15,6 +15,10 @@
 
   Asteroids.Util.inherits(Asteroids.Bullet, Asteroids.MovingObject);
 
+  Asteroids.Bullet.prototype.isWrappable = function(){
+    return false;
+  };
+
   Asteroids.Bullet.prototype.collideWith = function(otherObject){
 
     if (otherObject instanceof Asteroids.Asteroid){

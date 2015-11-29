@@ -63,6 +63,18 @@
     return new_pos;
   };
 
+  Asteroids.Game.prototype.isOutOfBounds = function(pos){
+    if ((pos[0] > DIM_X + 25) || (pos[0] < -25)) {
+      return true;
+    }
+    else if ((pos[1] < -25 || (pos[1] > DIM_Y))) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  };
+
   Asteroids.Game.prototype.checkCollisions = function(){
 
     for(var i = 0; i < this.allObjects().length - 1; i++){
