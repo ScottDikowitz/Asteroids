@@ -3,10 +3,10 @@
 
   var Asteroids = window.Asteroids = window.Asteroids || {};
   var RADIUS = 2;
-  var COLOR = "black";
+  var COLOR = "white";
   Asteroids.Bullet = function(vel, pos, game, radius){
-    pos = [(pos[0] + (vel[0]*15)), (pos[1] + (vel[1]*15))];
-    this.vel = [vel[0]*2, vel[1]*2];
+    pos = [(pos[0] + (vel[0]*20)), (pos[1] + (vel[1]*20))];
+    this.vel = [vel[0]*4, vel[1]*4];
     this.pos = pos;
     this.radius = RADIUS;
     this.color = COLOR;

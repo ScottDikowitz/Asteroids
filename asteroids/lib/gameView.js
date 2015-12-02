@@ -10,16 +10,16 @@
 Asteroids.GameView.prototype.start = function(){
   this.bindKeyHandlers();
   window.setInterval((function (){
-    game.step();
+    game.step(this.ctx);
     game.draw(this.ctx);
   }.bind(this)),  5);
 };
 
 Asteroids.GameView.prototype.bindKeyHandlers = function(){
-  key('up', function(){ this.game.ship.power([0,-0.4]); return false; }.bind(this));
-  key('down', function(){ this.game.ship.power([0,0.4]); return false; }.bind(this));
-  key('left', function(){ this.game.ship.power([-0.4, 0]); return false; }.bind(this));
-  key('right', function(){ this.game.ship.power([0.4,0]); return false; }.bind(this));
+  key('up', function(){ this.game.ship.thrust = true; return false; }.bind(this));
+  key('down', function(){ this.game.ship.thrust = false; return false; }.bind(this));
+  key('left', function(){ this.game.ship.setAngle(-0.18); return false; }.bind(this));
+  key('right', function(){ this.game.ship.setAngle(0.18); return false; }.bind(this));
   key('f', function(){ this.game.ship.fireBullet(); return false; }.bind(this));
 
 };
