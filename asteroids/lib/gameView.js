@@ -9,11 +9,24 @@
 
 Asteroids.GameView.prototype.start = function(){
   this.bindKeyHandlers();
-  window.setInterval((function (){
-    game.step(this.ctx);
-    game.draw(this.ctx);
-  }.bind(this)),  5);
+  this.lastTime = 0;
+  requestAnimationFrame(this.animate.bind(this));
 };
+
+Asteroids.GameView.prototype.animate = function(time){
+  var delta = time - this.lastTime;
+  requestAnimationFrame(this.animate.bind(this));
+
+  this.game.step(delta);
+  this.game.draw(this.ctx);
+
+  this.lastTime = time;
+
+};
+
+Asteroids.GameView.prototype.stop = function () {
+   clearInterval(this.timerId);
+ };
 
 Asteroids.GameView.prototype.bindKeyHandlers = function(){
   key('up', function(){ this.game.ship.thrust = true; return false; }.bind(this));

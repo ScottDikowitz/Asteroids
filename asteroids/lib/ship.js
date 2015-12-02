@@ -37,9 +37,27 @@
 
   };
 
+  Ship.sprite = new Image();
+
+  Ship.prototype.draw = function(ctx){
+    // debugger; ctx.save();
+    // ctx.translate(this.pos[0], this.pos[1]);
+    ctx.save();
+  ctx.translate(this.pos[0], this.pos[1]);
+  ctx.rotate(this.angle * Math.PI/180);
+
+    Ship.sprite.src = './assets/speedship.png';
+
+
+    // ctx.drawImage(Asteroids.Ship.sprite, 0, 0, 58, 64, 0, 0, 58, 64);
+    ctx.drawImage(Ship.sprite, 0, 0, 70, 70, -30, -30, 60, 60);
+    // ctx.restore();
+    ctx.restore();
+  };
+
   Ship.prototype.move = function(ctx){
     if (this.thrust){
-      var velo = Asteroids.Util.calcVec(0.35, this.angle);
+      var velo = Asteroids.Util.calcVec(0.70, this.angle);
 
       this.pos[0] += this.vel[0] + velo[0];
       this.pos[1] += this.vel[1] + velo[1];
@@ -47,12 +65,13 @@
       this.vel[0] = velo[0];
       this.vel[1] = velo[1];
 
-      this.pos = this.game.wrap(this.pos);
+
     }
     else{
       this.pos[0] += this.vel[0];
       this.pos[1] += this.vel[1];
     }
+    this.pos = this.game.wrap(this.pos);
 
   };
 

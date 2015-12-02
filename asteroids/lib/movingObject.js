@@ -19,14 +19,15 @@
       this.radius,
       0,
       2 * Math.PI,
-      false
+      true
     );
     ctx.fill();
   };
 
-  Asteroids.MovingObject.prototype.move = function () {
-    this.pos[0] += this.vel[0];
-    this.pos[1] += this.vel[1];
+  Asteroids.MovingObject.prototype.move = function (delta) {
+    // delta = 1;
+    this.pos[0] += this.vel[0] * delta / 20;
+    this.pos[1] += this.vel[1] * delta / 20;
 
     if (this.game.isOutOfBounds(this.pos)){
       if (this.isWrappable()){

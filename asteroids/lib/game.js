@@ -4,7 +4,7 @@
 
   var DIM_X = 800;
   var DIM_Y = 600;
-  var NUM_ASTEROIDS = 0;
+  var NUM_ASTEROIDS = 15;
 
   Asteroids.Game = function(){
     this.DIM_X = DIM_X;
@@ -35,10 +35,10 @@
     });
   };
 
-  Asteroids.Game.prototype.moveObjects = function(ctx){
+  Asteroids.Game.prototype.moveObjects = function(delta){
     // debugger;
     this.allObjects().forEach(function(obj){
-      obj.move(ctx);
+      obj.move(delta);
     });
 
   };
@@ -101,8 +101,8 @@
     return pos;
   };
 
-  Asteroids.Game.prototype.step = function(ctx){
-    this.moveObjects(ctx);
+  Asteroids.Game.prototype.step = function(delta){
+    this.moveObjects(delta);
     this.checkCollisions();
   };
 
