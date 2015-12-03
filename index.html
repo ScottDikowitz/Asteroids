@@ -8,15 +8,25 @@
       html, body, canvas {
         padding: 0px;
         margin: 0px;
+        text: inherit;
+      }
+      body {
+        font-family: sans-serif;
       }
       canvas {
         border: 3px solid black;
         background:url(./assets/planets.jpg) center;
         background-size: 100%;
+        margin: auto;
+        display: block;
+      }
+      h1 {
+        text-align: center;
       }
     </style>
   </head>
   <body>
+    <h1>Asteroids</h1>
     <canvas id="game-canvas"></canvas>
 
     <script src="keymaster.js"></script>
