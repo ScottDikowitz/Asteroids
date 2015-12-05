@@ -19,6 +19,7 @@ Things I plan to do:
 - [ ] Dynamic window size
 - [✓] Power-ups
 - [ ] More power-ups
+- [ ] Upgrade store
 - [ ] Make movement more realistic
 - [ ] Friction?
 - [ ] AI
