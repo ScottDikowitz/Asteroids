@@ -8,6 +8,7 @@ Things I plan to do:
 - [ ] Respawning asteroids
 - [ ] Asteroid sprites
 - [ ] Thrusters on sprite
+- [ ] Explosions
 - [ ] Difficulty progression
 - [ ] Levels
 - [ ] Ship upgrades
