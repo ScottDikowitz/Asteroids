@@ -8,6 +8,8 @@ Things I plan to do:
 - [✓] Respawning asteroids
 - [✓] Asteroid sprites
 - [ ] Better astroid sprites
+- [ ] Controls modal
+- [ ] Breakup asteroids
 - [ ] Thrusters on sprite
 - [ ] Explosions
 - [✓] Difficulty progression
@@ -21,4 +23,3 @@ Things I plan to do:
 - [ ] Friction?
 - [ ] AI
 - [ ] Game over
-- [ ] Controls modal
