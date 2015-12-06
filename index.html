@@ -42,9 +42,10 @@
 
    <script>
      var canvasEl = document.getElementById("game-canvas");
+     canvasEl.width = 1000;
      canvasEl.height = 600;
-     canvasEl.width = 800;
-     var game = new Asteroids.Game();
+
+     var game = new Asteroids.Game({DIM_X: canvasEl.width, DIM_Y: canvasEl.height});
      var gameView = new Asteroids.GameView(canvasEl, game);
      gameView.start();
    </script>
