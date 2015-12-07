@@ -24,3 +24,4 @@ Things I plan to do:
 - [ ] Friction?
 - [ ] AI
 - [ ] Game over
+- [ ] Level completion time bonus
