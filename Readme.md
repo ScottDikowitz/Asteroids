@@ -4,7 +4,7 @@ Steer your ship with WASD, shoot with spacebar.
 
 Things I plan to do:
 
-- [ ] Accuracy counter
+- [✓] Accuracy counter
 - [✓] Respawning asteroids
 - [✓] Asteroid sprites
 - [ ] Better astroid sprites
@@ -16,13 +16,13 @@ Things I plan to do:
 - [ ] Rocks that take multiple hits
 - [ ] Better difficulty progression
 - [✓] Levels
-- [ ] Ship upgrades
-- [ ] Dynamic window size
+- [✓] Ship upgrades
+- [✓] Dynamic window size
 - [✓] Power-ups
-- [ ] More power-ups
-- [ ] Upgrade store
+- [✓] More power-ups
+- [✓] Upgrade store
 - [ ] Make movement more realistic
-- [ ] Friction?
+- [✓] Friction?
 - [ ] AI
 - [ ] Game over
 - [ ] Level completion time bonus
