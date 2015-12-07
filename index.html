@@ -10,8 +10,17 @@
         margin: 0px;
         text: inherit;
       }
+
+      ul {
+        list-style: none;
+      }
       body {
         font-family: sans-serif;
+
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
       }
       canvas {
         /*border: 3px solid black;*/
@@ -20,10 +29,46 @@
         background-size: 100%;
         margin: auto;
         display: block;
+
+
+
       }
       h1 {
         text-align: center;
       }
+
+      .modal {
+        display: none;
+      }
+
+      .modal-content {
+        position: absolute;
+        z-index: 1000;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        /*height: 500px;*/
+        padding: 50px;
+        margin-left: -250px;
+        transform: translateY(-50%);
+        background: white;
+        border-radius: 5px;
+      }
+
+      .modal-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .modal.is-active {
+        display: block;
+      }
+
     </style>
   </head>
   <body>
@@ -51,5 +96,13 @@
      gameView.start();
    </script>
 
+  <div class="modal-content modal">
+  <ul>
+    <li>Bullet Count <button class="bullet">Upgrade</button></li>
+    <li>Invulnerability <button class="shields">Upgrade</button></li>
+    <li>Reload Speed <button class="reload">Upgrade</button></li>
+    <li>Ship Speed <button class="speed">Upgrade</button></li>
+  </ul>
+</div>
   </body>
 </html>
