@@ -14,8 +14,9 @@
         font-family: sans-serif;
       }
       canvas {
-        border: 3px solid black;
+        /*border: 3px solid black;*/
         background:url(./assets/planets.jpg) center;
+        /*background: black;*/
         background-size: 100%;
         margin: auto;
         display: block;
@@ -26,7 +27,7 @@
     </style>
   </head>
   <body>
-    <h1>Asteroids</h1>
+    <!-- <h1>Asteroids</h1> -->
     <canvas id="game-canvas"></canvas>
     <script src="jquery-2.1.1.js"></script>
     <!-- <script src="assets/util/key_listener.js"></script> -->
@@ -42,8 +43,8 @@
 
    <script>
      var canvasEl = document.getElementById("game-canvas");
-     canvasEl.width = 1000;
-     canvasEl.height = 600;
+     canvasEl.width = window.innerWidth;
+     canvasEl.height = window.innerHeight;
 
      var game = new Asteroids.Game({DIM_X: canvasEl.width, DIM_Y: canvasEl.height});
      var gameView = new Asteroids.GameView(canvasEl, game);

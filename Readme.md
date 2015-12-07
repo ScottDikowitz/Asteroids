@@ -13,6 +13,7 @@ Things I plan to do:
 - [ ] Thrusters on sprite
 - [ ] Explosions
 - [✓] Difficulty progression
+- [ ] Rocks that take multiple hits
 - [ ] Better difficulty progression
 - [✓] Levels
 - [ ] Ship upgrades
