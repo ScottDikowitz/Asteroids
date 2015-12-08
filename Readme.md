@@ -28,3 +28,4 @@ Things I plan to do:
 - [ ] AI
 - [ ] Game over
 - [ ] Level completion time bonus
+- [ ] Store cookies to store game session
