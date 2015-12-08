@@ -1,6 +1,8 @@
 Welcome. This is the classic Asteroids game!
 
-Steer your ship with WASD, shoot with spacebar.
+Steer your ship with WASD, shoot with spacebar or f.
+
+Access the upgrade store/pause the game with p.
 
 Things I plan to do:
 
