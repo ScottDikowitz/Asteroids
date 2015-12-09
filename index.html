@@ -87,6 +87,10 @@
         display: block;
       }
 
+      .game-over.is-active {
+        display: block;
+      }
+
 
     @font-face {
       font-family: 'ARCADECLASSIC';
@@ -104,6 +108,10 @@
       font-size: 30px;
       word-spacing: 3px;
       letter-spacing: 1px;
+    }
+
+    .game-over{
+      display: none;
     }
 
     .button {
@@ -142,15 +150,16 @@
      canvasEl.width = window.innerWidth;
      canvasEl.height = window.innerHeight;
 
-     var game = new Asteroids.Game({DIM_X: canvasEl.width, DIM_Y: canvasEl.height});
-     var gameView = new Asteroids.GameView(canvasEl, game);
+
+     var dims = {DIM_X: canvasEl.width, DIM_Y: canvasEl.height};
+     var gameView = new Asteroids.GameView(canvasEl, dims);
      gameView.start();
    </script>
 
   <div class="modal-content modal">
     <div class="modal-close">X</div>
     <h1>Upgrades</h1>
-  <ul>    
+  <ul>
     <li>Bullet Count: 150minerals<button class="bullet button">Upgrade</button></li>
     <li>Invulnerability: 75minerals<button class="shields button">Upgrade</button></li>
     <li>Reload Speed: 150minerals<button class="reload button">Upgrade</button></li>
@@ -159,15 +168,22 @@
 </div>
 <div class="modal-content modal-controls is-active">
   <div class="modal-close">X</div>
-
   <header>
   <h1>Asteroids!</h1>
   <p>Move with WAD<p>
   <p>Press Space to fire</p>
   <p>Press P to open upgrade menu.</p>
 </header>
+</div>
 
-
+<div class="modal-content game-over">
+  <div class="modal-close modal-close-gameover">X</div>
+  <header>
+  <h1>Game Over!</h1>
+  <!-- <p>Move with WAD<p>
+  <p>Press Space to fire</p>
+  <p>Press P to open upgrade menu.</p> -->
+</header>
 </div>
   </body>
 </html>
