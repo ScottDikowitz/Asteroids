@@ -37,6 +37,10 @@
         text-align: center;
       }
 
+      .modal-controls {
+        display: none;
+      }
+
       .modal {
         display: none;
       }
@@ -55,6 +59,16 @@
         border-radius: 5px;
       }
 
+      .modal-close {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        color: gray;
+      }
+
       .modal-screen {
         position: fixed;
         top: 0;
@@ -66,6 +80,10 @@
       }
 
       .modal.is-active {
+        display: block;
+      }
+
+      .modal-controls.is-active {
         display: block;
       }
 
@@ -103,6 +121,14 @@
     <li>Reload Speed: 150minerals<button class="reload">Upgrade</button></li>
     <li>Ship Speed: 150minerals<button class="speed">Upgrade</button></li>
   </ul>
+</div>
+<div class="modal-content modal-controls is-active">
+  <div class="modal-close">X</div>
+  Press P to open upgrade menu.
+  Press W to thrust.
+  Rotate with A and D.
+  Press Spacebar to fire.
+
 </div>
   </body>
 </html>
