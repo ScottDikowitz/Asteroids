@@ -29,3 +29,5 @@ Things I plan to do:
 - [ ] Game over
 - [ ] Level completion time bonus
 - [ ] Store cookies to store game session
+- [ ] Display health meter under asteroids
+- [ ] Reloading status bar
