@@ -33,3 +33,4 @@ Things I plan to do:
 - [ ] Store cookies to store game session
 - [ ] Display health meter under asteroids
 - [ ] Reloading status bar
+- [ ] Use deltas instead of set timeouts for shields and reloading
