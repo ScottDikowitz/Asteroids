@@ -11,6 +11,7 @@ Things I plan to do:
 - [✓] Accuracy counter
 - [✓] Respawning asteroids
 - [✓] Asteroid sprites
+- [ ] Achievements
 - [ ] Better astroid sprites
 - [ ] Controls modal
 - [ ] Breakup asteroids
